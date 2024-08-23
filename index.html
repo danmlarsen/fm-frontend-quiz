@@ -10,14 +10,41 @@
     <body>
         <main class="quiz">
             <div class="quiz__header">
-                <div class="quiz__category"></div>
-                <div class="quiz__theme"></div>
+                <div class="quiz__category">&nbsp;</div>
+                <div class="quiz__theme">
+                    <label for="theme-checkbox">
+                        <input class="quiz__theme-toggle" type="checkbox" name="theme" id="theme-checkbox" />
+                    </label>
+                </div>
             </div>
             <div class="quiz__question-wrapper">
                 <h1 class="heading-primary">Welcome to the Frontend Quiz!</h1>
                 <p>Pick a subject to get started.</p>
             </div>
-            <form class="quiz__answer-form" action="#" method="post"></form>
+            <div class="quiz__answers-wrapper">
+                <form class="quiz__answers-form" action="#" method="post">
+                    <label for="answer-1" class="quiz__answer">
+                        <img class="quiz__answer-icon" src="assets/images/icon-html.svg" alt="HTML" />
+                        <h3 class="quiz__answer-text">HTML</h3>
+                        <input type="radio" name="answer" id="answer-1" />
+                    </label>
+                    <label for="answer-2" class="quiz__answer">
+                        <img class="quiz__answer-icon" src="assets/images/icon-css.svg" alt="HTML" />
+                        <h3 class="quiz__answer-text">CSS</h3>
+                        <input type="radio" name="answer" id="answer-2" />
+                    </label>
+                    <label for="answer-3" class="quiz__answer">
+                        <img class="quiz__answer-icon" src="assets/images/icon-js.svg" alt="HTML" />
+                        <h3 class="quiz__answer-text">Javascript</h3>
+                        <input type="radio" name="answer" id="answer-3" />
+                    </label>
+                    <label for="answer-4" class="quiz__answer">
+                        <img class="quiz__answer-icon" src="assets/images/icon-accessibility.svg" alt="HTML" />
+                        <h3 class="quiz__answer-text">Accessibility</h3>
+                        <input type="radio" name="answer" id="answer-4" />
+                    </label>
+                </form>
+            </div>
         </main>
     </body>
 </html>

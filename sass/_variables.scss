@@ -12,12 +12,21 @@ $color-neutral-600: #626c7f;
 $color-neutral-800: #3b4d66;
 $color-neutral-900: #313e51;
 
+$background-color-light: $color-neutral-200;
+$text-color-light: $color-neutral-600;
+$heading-color-light: $color-neutral-900;
+
+$background-color-dark: $color-neutral-900;
+$text-color-dark: $color-neutral-400;
+$heading-color-dark: $color-neutral-100;
+
 //
 // Typography
 //
 $ff-primary: 'Rubik', sans-serif;
 $fw-regular: 400;
-
-:root {
-    --fs-body: 1.2rem;
-}
+$fs-body-sm: 1.4rem;
+$fs-body-md: 1.8rem;
+$fs-heading-lg: 4rem;
+$fs-heading-md: 2rem;
+$fs-heading-sm: 1.8rem;

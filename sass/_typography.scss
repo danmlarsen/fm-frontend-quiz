@@ -13,6 +13,18 @@
 
 body {
     font-family: $ff-primary;
-    font-size: var(--fs-body);
+    font-size: $fs-body-sm;
     line-height: 1.5;
+}
+
+h1 {
+    font-size: $fs-heading-lg;
+}
+
+h2 {
+    font-size: $fs-heading-md;
+}
+
+h3 {
+    font-size: $fs-heading-sm;
 }

@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+body {
+    background-color: $background-color-light;
+    color: $text-color-light;
+    padding: 0 2.4rem;
+
+    transition: background-color 2s ease-in-out, color 2s ease-in-out;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $heading-color-light;
+    }
+}
+
+.dark-mode {
+    background-color: $background-color-dark;
+    color: $text-color-dark;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $heading-color-dark;
+    }
+}
