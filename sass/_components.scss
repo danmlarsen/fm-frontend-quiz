@@ -63,7 +63,7 @@
     &::before {
         content: '';
         display: block;
-        width: 75%;
+        width: 50%;
         height: 100%;
         background-color: $color-primary;
         border-radius: 104px;
@@ -83,4 +83,11 @@
     font-weight: $fw-medium;
     line-height: 1;
     padding: 1.9rem;
+    cursor: pointer;
+    transition: 0.2s background-color ease-in-out;
+
+    &:hover,
+    &:focus {
+        background-color: lighten($color-primary, 25%);
+    }
 }
