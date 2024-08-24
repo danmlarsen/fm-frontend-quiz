@@ -51,3 +51,36 @@
         height: 1.6rem;
     }
 }
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    height: 1.6rem;
+    background-color: var(--background-color-2);
+    border-radius: 999px;
+    padding: 0.4rem;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 75%;
+        height: 100%;
+        background-color: $color-primary;
+        border-radius: 104px;
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-radius: 1.2rem;
+    background-color: $color-primary;
+    color: $color-neutral-100;
+    font-size: $fs-heading-sm;
+    font-weight: $fw-medium;
+    line-height: 1;
+    padding: 1.9rem;
+}

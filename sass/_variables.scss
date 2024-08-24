@@ -12,23 +12,26 @@ $color-neutral-600: #626c7f;
 $color-neutral-800: #3b4d66;
 $color-neutral-900: #313e51;
 
-$background-color-light: $color-neutral-200;
-$background-color-light-2: $color-neutral-100;
-$text-color-light: $color-neutral-600;
-$heading-color-light: $color-neutral-900;
-
-$background-color-dark: $color-neutral-900;
-$background-color-dark-2: $color-neutral-800;
-$text-color-dark: $color-neutral-400;
-$heading-color-dark: $color-neutral-100;
+$color-html: #fff1e9;
+$color-css: #e0fdef;
+$color-js: #ebf0ff;
+$color-a11y: #f6e7ff;
 
 //
 // Typography
 //
 $ff-primary: 'Rubik', sans-serif;
 $fw-regular: 400;
+$fw-medium: 500;
 $fs-body-sm: 1.4rem;
 $fs-body-md: 1.8rem;
 $fs-heading-lg: 4rem;
 $fs-heading-md: 2rem;
 $fs-heading-sm: 1.8rem;
+
+:root {
+    --background-color-1: #{$color-neutral-200};
+    --background-color-2: #{$color-neutral-100};
+    --text-color-1: #{$color-neutral-600};
+    --heading-color-1: #{$color-neutral-900};
+}
