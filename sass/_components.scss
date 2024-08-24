@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 3.2rem;
+    height: 2rem;
+
+    input[type='checkbox'] {
+        appearance: none;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-primary;
+        transition: 0.4s;
+        border-radius: 2rem;
+
+        &::before {
+            position: absolute;
+            content: '';
+            height: 1.2rem;
+            width: 1.2rem;
+            left: 4px;
+            bottom: 4px;
+            background-color: $color-neutral-100;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+    }
+
+    input[type='checkbox']:checked + .slider {
+        &::before {
+            transform: translateX(100%);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    &__icon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}

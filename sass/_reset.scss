@@ -14,3 +14,33 @@ html {
 body {
     min-height: 100vh;
 }
+
+img,
+picture,
+svg,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+textarea,
+button,
+option {
+    font: inherit;
+}
+
+ul[class] {
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    word-wrap: break-word;
+}

@@ -31,3 +31,11 @@
         }
     }
 }
+
+body.dark-mode {
+    .quiz {
+        &__answer {
+            background-color: $background-color-dark-2;
+        }
+    }
+}

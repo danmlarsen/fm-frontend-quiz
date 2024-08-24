@@ -5,7 +5,7 @@ body {
     color: $text-color-light;
     padding: 0 2.4rem;
 
-    transition: background-color 2s ease-in-out, color 2s ease-in-out;
+    transition: background-color 1s ease-out, color 1s ease-out;
 
     h1,
     h2,
@@ -13,6 +13,7 @@ body {
     h4,
     h5,
     h6 {
+        transition: color 1s ease-out;
         color: $heading-color-light;
     }
 }
