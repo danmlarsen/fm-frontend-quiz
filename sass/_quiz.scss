@@ -4,6 +4,7 @@
     max-width: 116rem;
     margin: 0 auto;
     display: grid;
+    gap: 4rem;
 
     &__header {
         padding: 1.6rem 0;
@@ -11,6 +12,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    &__question {
+        display: grid;
+        gap: 2.4rem;
+    }
+
+    &__question-text {
+        line-height: 1.2;
     }
 
     &__answers-form {
@@ -22,30 +32,75 @@
     }
 
     &__answer {
-        display: flex;
+        display: grid;
+        grid-template-columns: min-content 1fr auto;
         align-items: center;
         gap: 1.6rem;
+
         background-color: var(--background-color-2);
         padding: 1.2rem;
         border-radius: 12px;
+        border: 3px solid transparent;
+        cursor: pointer;
 
         input[type='radio'] {
             appearance: none;
+            display: none;
+        }
+
+        &--correct {
+            border-color: $color-correct;
+
+            .quiz__answer-label {
+                background-color: $color-correct;
+                color: $color-neutral-100;
+            }
+        }
+
+        &--incorrect {
+            border-color: $color-invalid;
+
+            .quiz__answer-label {
+                background-color: $color-invalid;
+                color: $color-neutral-100;
+            }
+        }
+
+        &:has(> input:checked) {
+            border-color: $color-primary;
         }
     }
 
     &__answer-icon {
-        &--html {
-            background-color: $color-html;
-        }
-        &--css {
-            background-color: $color-css;
-        }
-        &--js {
-            background-color: $color-js;
-        }
-        &--a11y {
-            background-color: $color-a11y;
-        }
+        width: 3.2rem;
+        height: 3.2rem;
+
+        // &--html {
+        //     background-color: $color-html;
+        // }
+        // &--css {
+        //     background-color: $color-css;
+        // }
+        // &--js {
+        //     background-color: $color-js;
+        // }
+        // &--a11y {
+        //     background-color: $color-a11y;
+        // }
+    }
+
+    &__answer-label {
+        font-size: $fs-heading-sm;
+        font-weight: $fw-medium;
+        padding: 1.4rem 1.8rem;
+        background-color: var(--background-color-1);
+        color: var(--text-color);
+        border-radius: 12px;
+        line-height: 1;
+    }
+
+    &__answer-radio:checked + span {
+        background-color: $color-primary;
+        color: $color-neutral-100;
     }
 }

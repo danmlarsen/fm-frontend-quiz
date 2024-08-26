@@ -24,21 +24,53 @@
                 </div>
             </div>
             <div class="quiz__question-wrapper">
-                <h1 class="heading-primary">Welcome to the Frontend Quiz!</h1>
-                <p>Pick a subject to get started.</p>
+                <div class="quiz__question">
+                    <p class="quiz__question-number">Question 6 of 10</p>
+                    <h3 class="quiz__question-text">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h3>
+                    <div class="progress-bar"></div>
+                </div>
             </div>
             <div class="quiz__answers-wrapper">
                 <form class="quiz__answers-form" action="#" method="post">
-                    <div class="quiz__answers"></div>
+                    <div class="quiz__answers">
+                        <label for="answer-1" class="quiz__answer quiz__answer--correct">
+                            <input class="quiz__answer-radio" type="radio" name="answer" id="answer-1" required />
+                            <span class="quiz__answer-label">A</span>
+                            <h3 class="quiz__answer-text">3:1</h3>
+                            <img class="quiz__answer-icon" src="assets/images/icon-correct.svg" alt="Correct answer icon" />
+                        </label>
+                        <label for="answer-2" class="quiz__answer">
+                            <input class="quiz__answer-radio" type="radio" name="answer" id="answer-2" required />
+                            <span class="quiz__answer-label">B</span>
+                            <h3 class="quiz__answer-text">4.5:1</h3>
+                        </label>
+                        <label for="answer-3" class="quiz__answer quiz__answer--incorrect">
+                            <input class="quiz__answer-radio" type="radio" name="answer" id="answer-3" required />
+                            <span class="quiz__answer-label">C</span>
+                            <h3 class="quiz__answer-text">7:1</h3>
+                            <img class="quiz__answer-icon" src="assets/images/icon-incorrect.svg" alt="Incorrect answer icon" />
+                        </label>
+                        <label for="answer-4" class="quiz__answer">
+                            <input class="quiz__answer-radio" type="radio" name="answer" id="answer-4" required />
+                            <span class="quiz__answer-label">D</span>
+                            <h3 class="quiz__answer-text">2:1</h3>
+                        </label>
+                        <button class="btn quiz__answer-btn">Submit Answer</button>
+                    </div>
                 </form>
 
-                <div class="progress-bar"></div>
-
-                <button class="btn">Button</button>
+                <!-- <div class="progress-bar"></div>
+                <button class="btn">Button</button> -->
             </div>
         </main>
     </body>
 </html>
+
+<!-- Title -->
+<!-- 
+<h1 class="heading-primary">Welcome to the <strong>Frontend Quiz!</strong></h1>
+<p>Pick a subject to get started.</p>
+ -->
 
 <!-- <label for="answer-1" class="quiz__answer">
     <img class="quiz__answer-icon quiz__answer-icon--html" src="assets/images/icon-html.svg" alt="HTML" />
