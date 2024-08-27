@@ -91,3 +91,32 @@
         background-color: lighten($color-primary, 25%);
     }
 }
+
+.category {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    &__icon {
+        width: 2.857rem;
+        height: 2.857rem;
+    }
+
+    &__icon-box {
+        padding: 0.571rem;
+        border-radius: 8px;
+
+        &--html {
+            background-color: $color-html;
+        }
+        &--css {
+            background-color: $color-css;
+        }
+        &--js {
+            background-color: $color-js;
+        }
+        &--a11y {
+            background-color: $color-a11y;
+        }
+    }
+}

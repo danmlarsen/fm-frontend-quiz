@@ -29,6 +29,15 @@ $fs-heading-lg: 4rem;
 $fs-heading-md: 2rem;
 $fs-heading-sm: 1.8rem;
 
+//
+// Breakpoints
+//
+$breakpoints: (
+    'large': '(min-width: 70em)',
+    'medium': '(min-width: 50em)',
+    'small': '(min-width: 40em)',
+);
+
 :root {
     --background-color-1: #{$color-neutral-200};
     --background-color-2: #{$color-neutral-100};

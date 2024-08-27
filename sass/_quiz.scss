@@ -71,24 +71,6 @@
         }
     }
 
-    &__answer-icon {
-        width: 3.2rem;
-        height: 3.2rem;
-
-        // &--html {
-        //     background-color: $color-html;
-        // }
-        // &--css {
-        //     background-color: $color-css;
-        // }
-        // &--js {
-        //     background-color: $color-js;
-        // }
-        // &--a11y {
-        //     background-color: $color-a11y;
-        // }
-    }
-
     &__answer-label {
         font-size: $fs-heading-sm;
         font-weight: $fw-medium;
