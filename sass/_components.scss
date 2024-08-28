@@ -92,7 +92,7 @@
     }
 }
 
-.category {
+.item {
     display: flex;
     align-items: center;
     gap: 1.6rem;
@@ -103,8 +103,18 @@
     }
 
     &__icon-box {
-        padding: 0.571rem;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
         border-radius: 8px;
+        font-size: $fs-heading-sm;
+        font-weight: $fw-medium;
+
+        background-color: $color-neutral-200;
+        color: $color-neutral-800;
 
         &--html {
             background-color: $color-html;

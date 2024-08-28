@@ -32,15 +32,15 @@
     }
 
     &__answer {
-        display: grid;
-        grid-template-columns: min-content 1fr auto;
+        display: flex;
         align-items: center;
-        gap: 1.6rem;
+        justify-content: space-between;
 
         background-color: var(--background-color-2);
-        padding: 1.2rem;
+        padding: 0.9rem;
         border-radius: 12px;
         border: 3px solid transparent;
+        box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
         cursor: pointer;
 
         input[type='radio'] {
@@ -51,7 +51,7 @@
         &--correct {
             border-color: $color-correct;
 
-            .quiz__answer-label {
+            .item__icon-box {
                 background-color: $color-correct;
                 color: $color-neutral-100;
             }
@@ -60,7 +60,7 @@
         &--incorrect {
             border-color: $color-invalid;
 
-            .quiz__answer-label {
+            .item__icon-box {
                 background-color: $color-invalid;
                 color: $color-neutral-100;
             }
@@ -71,17 +71,7 @@
         }
     }
 
-    &__answer-label {
-        font-size: $fs-heading-sm;
-        font-weight: $fw-medium;
-        padding: 1.4rem 1.8rem;
-        background-color: var(--background-color-1);
-        color: var(--text-color);
-        border-radius: 12px;
-        line-height: 1;
-    }
-
-    &__answer-radio:checked + span {
+    &__answer-radio:checked + .item .item__icon-box {
         background-color: $color-primary;
         color: $color-neutral-100;
     }

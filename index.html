@@ -11,11 +11,11 @@
     <body>
         <main class="quiz">
             <div class="quiz__header">
-                <div class="category">
-                    <div class="category__icon-box category__icon-box--a11y">
-                        <img src="assets/images/icon-accessibility.svg" alt="Accessibility icon" class="category__icon" />
+                <div class="item">
+                    <div class="item__icon-box item__icon-box--a11y">
+                        <img src="assets/images/icon-accessibility.svg" alt="Accessibility icon" class="item__icon" />
                     </div>
-                    <h2 class="category__title">Accessibility</h2>
+                    <h3 class="item__title">Accessibility</h3>
                 </div>
                 <div class="quiz__theme">
                     <div class="toggle__wrapper">
@@ -40,25 +40,33 @@
                     <div class="quiz__answers">
                         <label for="answer-1" class="quiz__answer">
                             <input class="quiz__answer-radio" type="radio" name="answer" id="answer-1" required />
-                            <span class="quiz__answer-label">A</span>
-                            <h3 class="quiz__answer-text">3:1</h3>
+                            <div class="item">
+                                <div class="item__icon-box">A</div>
+                                <h3 class="item__title">3:1</h3>
+                            </div>
                             <!-- <img class="quiz__answer-icon" src="assets/images/icon-correct.svg" alt="Correct answer icon" /> -->
                         </label>
                         <label for="answer-2" class="quiz__answer">
                             <input class="quiz__answer-radio" type="radio" name="answer" id="answer-2" required />
-                            <span class="quiz__answer-label">B</span>
-                            <h3 class="quiz__answer-text">4.5:1</h3>
+                            <div class="item">
+                                <div class="item__icon-box">B</div>
+                                <h3 class="item__title">4.5:1</h3>
+                            </div>
                         </label>
                         <label for="answer-3" class="quiz__answer">
                             <input class="quiz__answer-radio" type="radio" name="answer" id="answer-3" required />
-                            <span class="quiz__answer-label">C</span>
-                            <h3 class="quiz__answer-text">7:1</h3>
+                            <div class="item">
+                                <div class="item__icon-box">C</div>
+                                <h3 class="item__title">7:1</h3>
+                            </div>
                             <!-- <img class="quiz__answer-icon" src="assets/images/icon-incorrect.svg" alt="Incorrect answer icon" /> -->
                         </label>
                         <label for="answer-4" class="quiz__answer">
                             <input class="quiz__answer-radio" type="radio" name="answer" id="answer-4" required />
-                            <span class="quiz__answer-label">D</span>
-                            <h3 class="quiz__answer-text">2:1</h3>
+                            <div class="item">
+                                <div class="item__icon-box">D</div>
+                                <h3 class="item__title">2:1</h3>
+                            </div>
                         </label>
                         <button class="btn quiz__answer-btn">Submit Answer</button>
                     </div>
