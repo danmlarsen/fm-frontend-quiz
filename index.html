@@ -28,22 +28,63 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz__question-wrapper">
-                <!-- <div class="quiz__welcome">
-                    <h1 class="heading-primary">Welcome to the <strong>Frontend Quiz!</strong></h1>
+            <div class="quiz__wrapper">
+                <!-- Quiz welcome -->
+                <div class="quiz__welcome">
+                    <h1 class="heading-primary u-mb-sm">Welcome to the <strong>Frontend Quiz!</strong></h1>
                     <p>Pick a subject to get started.</p>
-                </div> -->
-                <div class="quiz__completed-title">
-                    <h1 class="heading-primary">Quiz completed <strong>You scored...</strong></h1>
                 </div>
 
+                <!-- Quiz completed title -->
+                <!-- <div class="quiz__completed-title">
+                    <h1 class="heading-primary">Quiz completed <strong>You scored...</strong></h1>
+                </div> -->
+
+                <!-- Quiz question -->
                 <!-- <div class="quiz__question">
                     <p class="quiz__question-number">Question 6 of 10</p>
                     <h2 class="quiz__question-text">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h2>
                     <div class="progress-bar"></div>
                 </div> -->
             </div>
-            <div class="quiz__answers-wrapper">
+            <div class="quiz__wrapper">
+                <!-- Quiz subjects -->
+                <div class="quiz__subjects">
+                    <button class="quiz__subject-btn">
+                        <div class="item">
+                            <div class="item__icon-box item__icon-box--html">
+                                <img src="assets/images/icon-html.svg" alt="HTML icon" class="item__icon" />
+                            </div>
+                            <h3 class="item__title">HTML</h3>
+                        </div>
+                    </button>
+                    <button class="quiz__subject-btn">
+                        <div class="item">
+                            <div class="item__icon-box item__icon-box--css">
+                                <img src="assets/images/icon-css.svg" alt="CSS icon" class="item__icon" />
+                            </div>
+                            <h3 class="item__title">CSS</h3>
+                        </div>
+                    </button>
+                    <button class="quiz__subject-btn">
+                        <div class="item">
+                            <div class="item__icon-box item__icon-box--js">
+                                <img src="assets/images/icon-js.svg" alt="Javascript icon" class="item__icon" />
+                            </div>
+                            <h3 class="item__title">Javascript</h3>
+                        </div>
+                    </button>
+                    <button class="quiz__subject-btn">
+                        <div class="item">
+                            <div class="item__icon-box item__icon-box--a11y">
+                                <img src="assets/images/icon-accessibility.svg" alt="Accessibility icon" class="item__icon" />
+                            </div>
+                            <h3 class="item__title">Accessibility</h3>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Quiz answers -->
                 <!-- <form class="quiz__answers-form" action="#" method="post">
                     <div class="quiz__answers">
                         <label for="answer-1" class="quiz__answer">
@@ -80,10 +121,8 @@
                     </div>
                 </form> -->
 
-                <!-- <div class="progress-bar"></div>
-                <button class="btn">Button</button> -->
-
-                <div>
+                <!-- Quiz completed view -->
+                <!-- <div>
                     <div class="quiz__completed-stats u-mb-sm">
                         <div class="item">
                             <div class="item__icon-box item__icon-box--a11y">
@@ -96,7 +135,7 @@
                         <p>out of 10</p>
                     </div>
                     <button class="btn">Play Again</button>
-                </div>
+                </div> -->
             </div>
         </main>
     </body>
@@ -124,3 +163,11 @@
     <h3 class="quiz__answer-text">Accessibility</h3>
     <input type="radio" name="answer" id="answer-4" />
 </label> -->
+
+<!-- Components -->
+
+<!-- Progress bar -->
+<!-- <div class="progress-bar"></div>-->
+
+<!-- Button -->
+<!-- <button class="btn">Button</button>  -->

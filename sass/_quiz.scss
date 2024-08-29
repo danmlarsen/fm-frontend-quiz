@@ -23,6 +23,20 @@
         line-height: 1.2;
     }
 
+    &__subjects {
+        display: grid;
+        gap: 1.2rem;
+    }
+
+    &__subject-btn {
+        width: 100%;
+        background-color: $color-neutral-100;
+        padding: 1.2rem;
+        border: none;
+        border-radius: 1.2rem;
+        cursor: pointer;
+    }
+
     &__answers-form {
     }
 
