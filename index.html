@@ -29,14 +29,22 @@
                 </div>
             </div>
             <div class="quiz__question-wrapper">
-                <div class="quiz__question">
+                <!-- <div class="quiz__welcome">
+                    <h1 class="heading-primary">Welcome to the <strong>Frontend Quiz!</strong></h1>
+                    <p>Pick a subject to get started.</p>
+                </div> -->
+                <div class="quiz__completed-title">
+                    <h1 class="heading-primary">Quiz completed <strong>You scored...</strong></h1>
+                </div>
+
+                <!-- <div class="quiz__question">
                     <p class="quiz__question-number">Question 6 of 10</p>
                     <h2 class="quiz__question-text">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h2>
                     <div class="progress-bar"></div>
-                </div>
+                </div> -->
             </div>
             <div class="quiz__answers-wrapper">
-                <form class="quiz__answers-form" action="#" method="post">
+                <!-- <form class="quiz__answers-form" action="#" method="post">
                     <div class="quiz__answers">
                         <label for="answer-1" class="quiz__answer">
                             <input class="quiz__answer-radio" type="radio" name="answer" id="answer-1" required />
@@ -44,7 +52,7 @@
                                 <div class="item__icon-box">A</div>
                                 <h3 class="item__title">3:1</h3>
                             </div>
-                            <!-- <img class="quiz__answer-icon" src="assets/images/icon-correct.svg" alt="Correct answer icon" /> -->
+                            <img class="quiz__answer-icon" src="assets/images/icon-correct.svg" alt="Correct answer icon" />
                         </label>
                         <label for="answer-2" class="quiz__answer">
                             <input class="quiz__answer-radio" type="radio" name="answer" id="answer-2" required />
@@ -59,7 +67,7 @@
                                 <div class="item__icon-box">C</div>
                                 <h3 class="item__title">7:1</h3>
                             </div>
-                            <!-- <img class="quiz__answer-icon" src="assets/images/icon-incorrect.svg" alt="Incorrect answer icon" /> -->
+                            <img class="quiz__answer-icon" src="assets/images/icon-incorrect.svg" alt="Incorrect answer icon" />
                         </label>
                         <label for="answer-4" class="quiz__answer">
                             <input class="quiz__answer-radio" type="radio" name="answer" id="answer-4" required />
@@ -70,20 +78,31 @@
                         </label>
                         <button class="btn quiz__answer-btn">Submit Answer</button>
                     </div>
-                </form>
+                </form> -->
 
                 <!-- <div class="progress-bar"></div>
                 <button class="btn">Button</button> -->
+
+                <div>
+                    <div class="quiz__completed-stats u-mb-sm">
+                        <div class="item">
+                            <div class="item__icon-box item__icon-box--a11y">
+                                <img src="assets/images/icon-accessibility.svg" alt="Accessibility icon" class="item__icon" />
+                            </div>
+                            <h3 class="item__title">Accessibility</h3>
+                        </div>
+
+                        <h2 class="quiz__score">8</h2>
+                        <p>out of 10</p>
+                    </div>
+                    <button class="btn">Play Again</button>
+                </div>
             </div>
         </main>
     </body>
 </html>
 
 <!-- Title -->
-<!-- 
-<h1 class="heading-primary">Welcome to the <strong>Frontend Quiz!</strong></h1>
-<p>Pick a subject to get started.</p>
- -->
 
 <!-- <label for="answer-1" class="quiz__answer">
     <img class="quiz__answer-icon quiz__answer-icon--html" src="assets/images/icon-html.svg" alt="HTML" />

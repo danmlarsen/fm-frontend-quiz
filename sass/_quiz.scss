@@ -75,4 +75,20 @@
         background-color: $color-primary;
         color: $color-neutral-100;
     }
+
+    &__completed-stats {
+        padding: 3.2rem;
+        background-color: $color-neutral-100;
+        box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
+        border-radius: 12px;
+
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        gap: 1.6rem;
+    }
+
+    &__score {
+        font-size: $fs-heading-xl;
+    }
 }
