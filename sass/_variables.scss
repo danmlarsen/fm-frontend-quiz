@@ -24,20 +24,25 @@ $color-a11y: #f6e7ff;
 $ff-primary: 'Rubik', sans-serif;
 $fw-regular: 400;
 $fw-medium: 500;
-$fs-body-sm: 1.4rem;
+$fs-body-sm: 2rem;
 $fs-body-md: 1.8rem;
 $fs-heading-xl: 8.8rem;
-$fs-heading-lg: 4rem;
-$fs-heading-md: 2rem;
-$fs-heading-sm: 1.8rem;
+$fs-heading-lg: 6.4rem;
+$fs-heading-md: 3.6rem;
+$fs-heading-sm: 2.8rem;
+
+
+// $fs-body-sm: 1.4rem;
+// $fs-heading-lg: 4rem;
+// $fs-heading-md: 2rem;
+// $fs-heading-sm: 1.8rem;
 
 //
 // Breakpoints
 //
 $breakpoints: (
-    'large': '(min-width: 70em)',
-    'medium': '(min-width: 50em)',
-    'small': '(min-width: 40em)',
+    'medium': (max-width: 64em),
+    'small': (max-width: 37.5em),
 );
 
 :root {
