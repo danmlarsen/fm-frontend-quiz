@@ -60,10 +60,7 @@
     border-radius: 999px;
     padding: 0.4rem;
 
-    &::before {
-        content: '';
-        display: block;
-        width: 50%;
+    & > div {
         height: 100%;
         background-color: $color-primary;
         border-radius: 104px;
