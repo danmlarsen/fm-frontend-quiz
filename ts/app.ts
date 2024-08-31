@@ -1,13 +1,13 @@
-import { ProgressBar } from "./ProgressBar";
+import { ProgressBar } from './ProgressBar';
+import { Toggle } from './Toggle';
 
-const progressBar = document.querySelector('.progress-bar')
+const progressBar = document.querySelector('.progress-bar');
 if (progressBar) {
-    const slider = new ProgressBar(progressBar, 10000);
-    slider.start();
+  const slider = new ProgressBar(progressBar, 10000);
+  slider.start();
 }
 
-const checkbox = document.getElementById('theme-checkbox');
-
-checkbox?.addEventListener('click', function (e) {
-    document.body.classList.toggle('dark-mode');
-});
+const toggleWrapper = document.querySelector('.quiz__theme');
+if (toggleWrapper) {
+  const toggle = new Toggle(toggleWrapper);
+}
