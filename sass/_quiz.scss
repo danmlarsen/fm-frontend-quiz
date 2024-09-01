@@ -2,124 +2,128 @@
 @use 'mixins' as *;
 
 .quiz {
-    max-width: 116rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+  max-width: 116rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
 
+  @include respond-to('medium') {
+    grid-template-columns: 1fr;
+    max-width: 64rem;
+  }
+
+  &__header {
+    padding: 1.6rem 0;
+    min-height: 7.2rem;
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     @include respond-to('medium') {
-        grid-template-columns: 1fr;
-        max-width: 64rem;
+      grid-column: initial;
+    }
+  }
+
+  &__question {
+    min-height: 90%;
+    display: grid;
+    gap: 2.4rem;
+
+    grid-template-rows: min-content 1fr min-content;
+  }
+
+  &__question-text {
+    line-height: 1.2;
+  }
+
+  &__subjects {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  &__subject-btn {
+    width: 100%;
+    background-color: var(--background-color-2);
+    box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
+    padding: 1.2rem;
+    border: none;
+    border-radius: 1.2rem;
+    cursor: pointer;
+  }
+
+  &__answers-form {
+  }
+
+  &__answers {
+    display: grid;
+    gap: 2.4rem;
+  }
+
+  &__answer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--background-color-2);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
+    cursor: pointer;
+
+    input[type='radio'] {
+      appearance: none;
+      display: none;
     }
 
-    &__header {
-        padding: 1.6rem 0;
-        min-height: 7.2rem;
-        grid-column: span 2;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &--correct {
+      border-color: $color-correct;
 
-        @include respond-to('medium') {
-            grid-column: initial;
-        }
-    }
-
-    &__question {
-        min-height: 90%;
-        display: grid;
-        gap: 2.4rem;
-
-        grid-template-rows: min-content 1fr min-content;
-    }
-
-    &__question-text {
-        line-height: 1.2;
-    }
-
-    &__subjects {
-        display: grid;
-        gap: 1.2rem;
-    }
-
-    &__subject-btn {
-        width: 100%;
-        background-color: var(--background-color-2);
-        box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
-        padding: 1.2rem;
-        border: none;
-        border-radius: 1.2rem;
-        cursor: pointer;
-    }
-
-    &__answers-form {
-    }
-
-    &__answers {
-        display: grid;
-        gap: 2.4rem;
-    }
-
-    &__answer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        background-color: var(--background-color-2);
-        padding: 1.5rem;
-        border-radius: 12px;
-        border: 3px solid transparent;
-        box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
-        cursor: pointer;
-
-        input[type='radio'] {
-            appearance: none;
-            display: none;
-        }
-
-        &--correct {
-            border-color: $color-correct;
-
-            .item__icon-box {
-                background-color: $color-correct;
-                color: $color-neutral-100;
-            }
-        }
-
-        &--incorrect {
-            border-color: $color-invalid;
-
-            .item__icon-box {
-                background-color: $color-invalid;
-                color: $color-neutral-100;
-            }
-        }
-
-        &:has(> input:checked) {
-            border-color: $color-primary;
-        }
-    }
-
-    &__answer-radio:checked + .item .item__icon-box {
-        background-color: $color-primary;
+      .item__icon-box {
+        background-color: $color-correct;
         color: $color-neutral-100;
+      }
     }
 
-    &__completed-stats {
-        padding: 3.2rem;
-        background-color: $color-neutral-100;
-        box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
-        border-radius: 12px;
+    &--incorrect {
+      border-color: $color-invalid;
 
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        gap: 1.6rem;
+      .item__icon-box {
+        background-color: $color-invalid;
+        color: $color-neutral-100;
+      }
     }
 
-    &__score {
-        font-size: $fs-heading-xl;
+    &:has(> input:checked) {
+      border-color: $color-primary;
     }
+  }
+
+  &__answer-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__answer-radio:checked + .item .item__icon-box {
+    background-color: $color-primary;
+    color: $color-neutral-100;
+  }
+
+  &__completed-stats {
+    padding: 3.2rem;
+    background-color: $color-neutral-100;
+    box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
+    border-radius: 12px;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 1.6rem;
+  }
+
+  &__score {
+    font-size: $fs-heading-xl;
+  }
 }

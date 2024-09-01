@@ -9,7 +9,7 @@ export class ProgressBar {
     private totalDuration: number = 30000,
     private finishedCallback: () => void = () => null
   ) {
-    this.intervalTime = 10;
+    this.intervalTime = 100;
     this.progressBarElement = document.createElement('div');
 
     this.renderProgressBar();

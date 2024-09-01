@@ -1,26 +1,26 @@
 @use 'variables' as *;
 
 body {
-    background-color: var(--background-color-1);
-    color: var(--text-color-1);
-    padding: 0 2.4rem;
+  background-color: var(--background-color-1);
+  color: var(--text-color-1);
+  padding: 0 2.4rem;
 
-    transition: background-color 1s ease-out, color 1s ease-out;
+  transition: background-color 0.2s ease-out, color 0.2s ease-in-out;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        transition: color 1s ease-out;
-        color: var(--heading-color-1);
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    transition: color 1s ease-out;
+    color: var(--heading-color-1);
+  }
 }
 
 .dark-mode {
-    --background-color-1: #{$color-neutral-900};
-    --background-color-2: #{$color-neutral-800};
-    --text-color-1: #{$color-neutral-400};
-    --heading-color-1: #{$color-neutral-100};
+  --background-color-1: #{$color-neutral-900};
+  --background-color-2: #{$color-neutral-800};
+  --text-color-1: #{$color-neutral-400};
+  --heading-color-1: #{$color-neutral-100};
 }
