@@ -1,3 +1,11 @@
+import iconCorrect from '../assets/images/icon-correct.svg';
+import iconIncorrect from '../assets/images/icon-incorrect.svg';
+
+import iconHtml from '../assets/images/icon-html.svg';
+import iconCss from '../assets/images/icon-css.svg';
+import iconJs from '../assets/images/icon-js.svg';
+import iconAccessibility from '../assets/images/icon-accessibility.svg'
+
 import { ProgressBar } from './ProgressBar';
 
 import data from '../data.json';
@@ -36,6 +44,7 @@ export class Quiz {
     private quizHeader: HTMLElement;
     private selectedSubjectIndex = 0;
     private currentQuestion = 0;
+    private progressBar: ProgressBar | null = null;
 
 
     constructor(
@@ -89,8 +98,8 @@ export class Quiz {
 
         const progressBarElement = this.questionsContainerElement.querySelector('.progress-bar');
         if (progressBarElement) {
-            const progressBar = new ProgressBar(progressBarElement);
-            progressBar.start();
+            this.progressBar = new ProgressBar(progressBarElement);
+            this.progressBar.start();
         }
     }
 
@@ -101,14 +110,41 @@ export class Quiz {
 
         const {answer} = Object.fromEntries(new FormData(e.target as HTMLFormElement));
 
-        if (answer === validAnswer) {
-            // Valid answer
-        } else {
-            // Invalid
+        console.log(e.target);
+        console.log(answer);
+        
+        this.progressBar?.stop();
+
+        const options = this.answersContainerElement.querySelectorAll('.quiz__answer-radio');
+        options.forEach((element) => {  
+
+            (element as HTMLInputElement).checked = false;
+            (element as HTMLInputElement).disabled = true;
+
+            const labelElement = element.closest('.quiz__answer');
+
+            if (answer === validAnswer && (element as HTMLInputElement).value === answer) {
+                labelElement?.classList.add('quiz__answer--correct');
+            }
+
+            if (answer !== validAnswer && (element as HTMLInputElement).value === answer) {
+                labelElement?.classList.add('quiz__answer--incorrect');
+                labelElement?.insertAdjacentHTML('beforeend', `<img class="quiz__answer-icon" src="${iconIncorrect}" alt="Incorrect answer icon" />`)
+            }
+
+            if ((element as HTMLInputElement).value === validAnswer) {
+                labelElement?.insertAdjacentHTML('beforeend', `<img class="quiz__answer-icon" src="${iconCorrect}" alt="Correct answer icon" />`)
+            }
+        });
+
+        const answerBtn = this.answersContainerElement.querySelector('.quiz__answer-btn') as HTMLInputElement;
+        if (answerBtn) {
+            answerBtn.textContent = 'Next Question';
+            answerBtn.blur();
         }
 
-        this.currentQuestion++;
-        this.renderQuestion();
+        // this.currentQuestion++;
+        // this.renderQuestion();
 
     }
 
@@ -157,7 +193,14 @@ export class Quiz {
         this.questionsContainerElement.innerHTML = markup;
     }
 
-    private renderSubjectButton({title, icon}: QuizData, index: number): string {       
+    private renderSubjectButton({title}: QuizData, index: number): string { 
+
+        let icon = '';
+        if (title === 'HTML') icon = iconHtml; 
+        if (title === 'CSS') icon = iconCss; 
+        if (title === 'JavaScript') icon = iconJs; 
+        if (title === 'Accessibility') icon = iconAccessibility; 
+        
         return `
             <button class="quiz__subject-btn" data-subject="${index}">
                 <div class="item">
