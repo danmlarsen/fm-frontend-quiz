@@ -26,6 +26,10 @@
     }
   }
 
+  &__theme {
+    margin-left: auto;
+  }
+
   &__question {
     min-height: 90%;
     display: grid;
@@ -126,5 +130,12 @@
 
   &__score {
     font-size: $fs-heading-xl;
+  }
+
+  &__invalid-answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
   }
 }
