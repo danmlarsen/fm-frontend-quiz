@@ -6,7 +6,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  row-gap: 6.4rem;
 
   @include respond-to('medium') {
     grid-template-columns: 1fr;
@@ -72,7 +72,7 @@
 
     background-color: var(--background-color-2);
     padding: 1.5rem;
-    border-radius: 12px;
+    border-radius: 2.4rem;
     border: 3px solid transparent;
     box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
     cursor: pointer;
@@ -117,7 +117,7 @@
   }
 
   &__completed-stats {
-    padding: 3.2rem;
+    padding: 4.8rem;
     background-color: var(--background-color-2);
     color: var(--heading-color-1);
     box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
@@ -126,7 +126,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    gap: 1.6rem;
+    gap: 4rem;
   }
 
   &__score {

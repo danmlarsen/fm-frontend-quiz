@@ -73,7 +73,7 @@
   align-items: center;
   width: 100%;
   border: none;
-  border-radius: 1.2rem;
+  border-radius: 2.4rem;
   background-color: $color-primary;
   color: $color-neutral-100;
   font-size: $fs-heading-sm;
@@ -92,11 +92,11 @@
 .item {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 2.4rem;
 
   &__icon {
-    width: 2.857rem;
-    height: 2.857rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   &__icon-box {
@@ -106,7 +106,7 @@
     justify-content: center;
     align-items: center;
     line-height: 1;
-    border-radius: 8px;
+    border-radius: 0.8rem;
     font-size: $fs-heading-sm;
     font-weight: $fw-medium;
 

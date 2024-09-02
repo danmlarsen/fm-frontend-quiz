@@ -58,7 +58,6 @@ export class Quiz {
   private data: QuizData[] = [];
   private questionsContainerElement: HTMLElement;
   private answersContainerElement: HTMLElement;
-  private quizHeader: HTMLElement;
   private subjectHeaderElement: HTMLElement;
   private selectedSubjectIndex = 0;
   private currentQuestionIndex = 0;
@@ -72,10 +71,7 @@ export class Quiz {
     this.answersContainerElement = quizElement.querySelector<HTMLElement>(
       '.quiz__wrapper--answers'
     )!;
-    this.quizHeader = quizElement.querySelector<HTMLElement>(
-      '.quiz__header .item'
-    )!;
-    this.subjectHeaderElement = document.querySelector<HTMLElement>('.quiz__subject-header')!;
+    this.subjectHeaderElement = quizElement.querySelector<HTMLElement>('.quiz__subject-header')!;   
 
     this.fetchData();
 
@@ -221,13 +217,13 @@ export class Quiz {
 
     this.questionsContainerElement.innerHTML = `
             <div class="quiz__completed-title">
-                <h1 class="heading-primary">Quiz completed <strong>You scored...</strong></h1>
+                <h1 class="heading-primary">Quiz completed<br /><strong>You scored...</strong></h1>
             </div>
         `;
 
     this.answersContainerElement.innerHTML = `
             <div>
-                <div class="quiz__completed-stats u-mb-sm">
+                <div class="quiz__completed-stats u-mb-lg">
                     <div class="item">
                         <div class="item__icon-box item__icon-box--${title.toLowerCase()}">
                             <img src="${getIcon(
@@ -326,7 +322,7 @@ export class Quiz {
     `;
   }
 
-  private renderStartMenu(): void {
+  private renderStartMenu(): void {   
     this.subjectHeaderElement.innerHTML = '&nbsp;';
     this.renderTitle();
     this.renderSubjects();
