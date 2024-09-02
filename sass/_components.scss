@@ -64,7 +64,6 @@
     height: 100%;
     background-color: $color-primary;
     border-radius: 104px;
-    transition: width 100ms linear;
   }
 }
 
@@ -120,10 +119,10 @@
     &--css {
       background-color: $color-css;
     }
-    &--js {
+    &--javascript {
       background-color: $color-js;
     }
-    &--a11y {
+    &--accessibility {
       background-color: $color-a11y;
     }
   }

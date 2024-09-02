@@ -9,7 +9,7 @@ export class ProgressBar {
     private totalDuration: number = 30000,
     private finishedCallback: () => void = () => null
   ) {
-    this.intervalTime = 100;
+    this.intervalTime = 10;
     this.progressBarElement = document.createElement('div');
 
     this.renderProgressBar();
@@ -22,7 +22,6 @@ export class ProgressBar {
 
   stop(): void {
     clearInterval(this.timer);
-    this.finishedCallback();
   }
 
   calcRemainingPercent(): number {
@@ -44,6 +43,7 @@ export class ProgressBar {
     this.updateProgressBarWidth();
 
     if (this.remainingDuration <= 0) {
+      this.finishedCallback();
       this.stop();
     }
   }

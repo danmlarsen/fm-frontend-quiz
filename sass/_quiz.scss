@@ -113,7 +113,8 @@
 
   &__completed-stats {
     padding: 3.2rem;
-    background-color: $color-neutral-100;
+    background-color: var(--background-color-2);
+    color: var(--heading-color-1);
     box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
     border-radius: 12px;
 
