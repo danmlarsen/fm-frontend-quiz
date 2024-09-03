@@ -1,6 +1,5 @@
 import iconCorrect from '../assets/images/icon-correct.svg';
 import iconIncorrect from '../assets/images/icon-incorrect.svg';
-
 import iconHtml from '../assets/images/icon-html.svg';
 import iconCss from '../assets/images/icon-css.svg';
 import iconJs from '../assets/images/icon-js.svg';
@@ -65,12 +64,8 @@ export class Quiz {
   private progressBar: ProgressBar | null = null;
 
   constructor(private quizElement: Element) {
-    this.questionsContainerElement = quizElement.querySelector<HTMLElement>(
-      '.quiz__wrapper--questions'
-    )!;
-    this.answersContainerElement = quizElement.querySelector<HTMLElement>(
-      '.quiz__wrapper--answers'
-    )!;
+    this.questionsContainerElement = quizElement.querySelector<HTMLElement>('.quiz__wrapper--questions')!;
+    this.answersContainerElement = quizElement.querySelector<HTMLElement>('.quiz__wrapper--answers')!;
     this.subjectHeaderElement = quizElement.querySelector<HTMLElement>('.quiz__subject-header')!;   
 
     this.fetchData();
@@ -82,7 +77,7 @@ export class Quiz {
     this.data = data.quizzes;
   }
 
-  startQuiz(subject: number): void {
+  private startQuiz(subject: number): void {
     this.selectedSubjectIndex = subject;
     this.currentQuestionIndex = 0;
     this.currentScore = 0;
@@ -108,11 +103,11 @@ export class Quiz {
     return quizData.questions.length;
   }
 
-  getValidAnswer(question: Question): string {
+  private getValidAnswer(question: Question): string {
     return question.answer;
   }
 
-  renderSubjectHeader(): void {
+  private renderSubjectHeader(): void {
     const title = this.getSelectedSubject().title;
 
     this.subjectHeaderElement.innerHTML = `
@@ -123,17 +118,17 @@ export class Quiz {
     `;
   }
 
-  renderQuestion(): void {
+  private renderQuestion(): void {
     this.renderQuestionText(this.getSelectedSubject());
     this.renderAnswers(this.getCurrentQuestion().options);
   }
 
   private handleProgressbarTimeout(): void {
-    this.validateAnswer('', true);
+    this.validateAnswers('', true);
     this.renderNextQuestionBtn();
   }
 
-  renderQuestionText(selectedSubject: QuizData): void {
+  private renderQuestionText(selectedSubject: QuizData): void {
     const totalQuestions = this.getNumQuestions(selectedSubject);
     const questionText = this.getCurrentQuestion().question;
 
@@ -159,7 +154,7 @@ export class Quiz {
     }
   }
 
-  private validateAnswer(answer: string, timeout: boolean = false): void {
+  private validateAnswers(answer: string, timeout: boolean = false): void {
 
     if (!timeout && !answer) {
         const answersElement = this.answersContainerElement.querySelector('.quiz__answers')!;
@@ -278,7 +273,7 @@ export class Quiz {
       new FormData(e.target as HTMLFormElement)
     );
 
-    this.validateAnswer(answer as string);
+    this.validateAnswers(answer as string);
     if (!answer) return;
 
     if (answer === this.getValidAnswer(this.getCurrentQuestion())) {
@@ -290,7 +285,7 @@ export class Quiz {
     this.renderNextQuestionBtn();
   }
 
-  renderAnswers(answers: string[]): void {
+  private renderAnswers(answers: string[]): void {
     const answersMarkup = answers.map(this.renderAnswer).join('');
 
     this.answersContainerElement.innerHTML = `
@@ -309,7 +304,7 @@ export class Quiz {
     formElement.addEventListener('submit', this.onSubmitAnswer.bind(this));
   }
 
-  renderAnswer(answer: string, index: number): string {
+  private renderAnswer(answer: string, index: number): string {
     return `
         <label for="answer-${index + 1}" class="quiz__answer">
             <input class="quiz__answer-radio" type="radio" name="answer" id="answer-${

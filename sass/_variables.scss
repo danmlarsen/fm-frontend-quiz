@@ -32,6 +32,11 @@ $fs-heading-lg: 6.4rem;
 $fs-heading-md: 3.6rem;
 $fs-heading-sm: 2.8rem;
 
+//
+// Utility
+//
+$shadow-1: 0 1.6rem 4rem rgba(var(--shadow-color-1), 0.14);
+
 
 // $fs-body-sm: 1.4rem;
 // $fs-heading-lg: 4rem;
@@ -51,4 +56,5 @@ $breakpoints: (
     --background-color-2: #{$color-neutral-100};
     --text-color-1: #{$color-neutral-600};
     --heading-color-1: #{$color-neutral-900};
+    --shadow-color-1: #{$color-neutral-500};
 }

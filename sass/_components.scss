@@ -81,6 +81,7 @@
   line-height: 1;
   padding: 3.2rem;
   cursor: pointer;
+  box-shadow: $shadow-1;
   transition: 0.2s background-color ease-in-out;
 
   &:hover,
