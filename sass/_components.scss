@@ -90,7 +90,8 @@
 }
 
 .item {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr 4rem;
   align-items: center;
   gap: 2.4rem;
 
@@ -109,9 +110,9 @@
     border-radius: 0.8rem;
     font-size: $fs-heading-sm;
     font-weight: $fw-medium;
-
     background-color: $color-neutral-200;
     color: $color-neutral-800;
+    transition: all .2s ease-in;
 
     &--html {
       background-color: $color-html;

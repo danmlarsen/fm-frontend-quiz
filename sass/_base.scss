@@ -1,26 +1,49 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 body {
-  background-color: var(--background-color-1);
+//   background-color: var(--background-color-1);
   color: var(--text-color-1);
   padding: 8.3rem 2.4rem;
+  transition: background-color 0.2s ease-out, color 0.2s ease-in;
 
-  transition: background-color 0.2s ease-out, color 0.2s ease-in-out;
+  background-image: url('../assets/images/pattern-background-desktop-light.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    transition: color 1s ease-out;
-    color: var(--heading-color-1);
+  @include respond-to('medium') {
+    background-image: url('../assets/images/pattern-background-tablet-light.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
+    padding: 0 2.4rem;
+  }
+
+  @include respond-to('small') {
+    background-image: url('../assets/images/pattern-background-mobile-light.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
   }
 }
 
-.dark-mode {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: color 1s ease-in;
+  color: var(--heading-color-1);
+}
+
+body.dark-mode {
   --background-color-1: #{$color-neutral-900};
   --background-color-2: #{$color-neutral-800};
   --text-color-1: #{$color-neutral-400};
   --heading-color-1: #{$color-neutral-100};
+
+  background-image: url('../assets/images/pattern-background-desktop-dark.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
+
+  @include respond-to('medium') {
+    background-image: url('../assets/images/pattern-background-tablet-dark.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
+  }
+
+  @include respond-to('small') {
+    background-image: url('../assets/images/pattern-background-mobile-dark.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
+  }
 }

@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 6.4rem;
+  column-gap: 13.1rem;
 
   @include respond-to('medium') {
     grid-template-columns: 1fr;
@@ -44,7 +45,7 @@
 
   &__subjects {
     display: grid;
-    gap: 1.2rem;
+    gap: 2.4rem;
   }
 
   &__subject-btn {
@@ -66,10 +67,6 @@
   }
 
   &__answer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     background-color: var(--background-color-2);
     padding: 1.5rem;
     border-radius: 2.4rem;
@@ -77,10 +74,16 @@
     box-shadow: 0 1.6rem 4rem rgba($color-neutral-500, 0.14);
     cursor: pointer;
     user-select: none;
+    transition: all .2s ease-in;
 
     input[type='radio'] {
       appearance: none;
       display: none;
+    }
+
+    &:hover .item__icon-box {
+        background-color: $color-a11y;     
+        color: $color-primary;   
     }
 
     &--correct {

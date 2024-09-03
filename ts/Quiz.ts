@@ -189,7 +189,8 @@ export class Quiz {
       element.checked = false;
       element.disabled = true;
 
-      const labelElement = element.closest('.quiz__answer');
+      const labelElement = element.closest('.quiz__answer')!;
+      const labelContentElement = labelElement.querySelector('.item')!;
 
       if (answer === validAnswer && element.value === answer) {
         labelElement?.classList.add('quiz__answer--correct');
@@ -197,14 +198,14 @@ export class Quiz {
 
       if (answer !== validAnswer && element.value === answer) {
         labelElement?.classList.add('quiz__answer--incorrect');
-        labelElement?.insertAdjacentHTML(
+        labelContentElement?.insertAdjacentHTML(
           'beforeend',
           `<img class="quiz__answer-icon" src="${iconIncorrect}" alt="Incorrect answer icon" />`
         );
       }
 
       if (element.value === validAnswer) {
-        labelElement?.insertAdjacentHTML(
+        labelContentElement?.insertAdjacentHTML(
           'beforeend',
           `<img class="quiz__answer-icon" src="${iconCorrect}" alt="Correct answer icon" />`
         );
