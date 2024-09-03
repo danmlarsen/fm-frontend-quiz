@@ -94,6 +94,7 @@
   display: grid;
   grid-template-columns: max-content 1fr 4rem;
   align-items: center;
+  justify-items: start;
   gap: 2.4rem;
 
   &__icon {

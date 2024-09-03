@@ -2,7 +2,6 @@
 @use 'mixins' as *;
 
 body {
-//   background-color: var(--background-color-1);
   color: var(--text-color-1);
   padding: 8.3rem 2.4rem;
   transition: background-color 0.2s ease-out, color 0.2s ease-in;
@@ -13,7 +12,7 @@ body {
 
   @include respond-to('medium') {
     background-image: url('../assets/images/pattern-background-tablet-light.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
-    padding: 0 2.4rem;
+    padding: 4rem 2.4rem;
   }
 
   @include respond-to('small') {

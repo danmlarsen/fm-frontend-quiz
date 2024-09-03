@@ -13,7 +13,6 @@ html {
     scroll-behavior: smooth;
 
     @include respond-to('small') {
-        // font-size: 35%;
         font-size: clamp(35%, -0.1826rem + 1.6603vw, 62.5%);
     }
 }

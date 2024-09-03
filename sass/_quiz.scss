@@ -15,8 +15,6 @@
   }
 
   &__header {
-    padding: 1.6rem 0;
-    min-height: 7.2rem;
     grid-column: span 2;
     display: flex;
     justify-content: space-between;
@@ -24,7 +22,7 @@
 
     @include respond-to('medium') {
       grid-column: initial;
-    }
+    } 
   }
 
   &__theme {
