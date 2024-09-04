@@ -74,7 +74,7 @@ export class Toggle {
           this.toggleActive ? iconSunLight : iconSunDark
         }" alt="Sun icon" class="toggle__icon toggle__icon--sun" />
         <label for="theme-checkbox" class="toggle">
-            <input class="quiz__theme-toggle" type="checkbox" name="theme" id="theme-checkbox" />
+            <input class="quiz__theme-toggle" type="checkbox" name="theme" id="theme-checkbox" aria-label="Dark mode toggle" />
             <span class="slider"></span>
         </label>
         <img src="${

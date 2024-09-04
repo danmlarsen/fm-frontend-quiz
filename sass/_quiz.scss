@@ -5,7 +5,7 @@
   max-width: 116rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 46.5rem 1fr;
   row-gap: 6.4rem;
   column-gap: 13.1rem;
 
@@ -63,17 +63,15 @@
 
   }
 
-  &__answers-form {
-  }
-
   &__answers {
     display: grid;
     gap: 2.4rem;
+    border: none;
   }
 
   &__answer {
     background-color: var(--background-color-2);
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
     border-radius: 2.4rem;
     border: 3px solid transparent;
     box-shadow: $shadow-1;
@@ -81,9 +79,13 @@
     user-select: none;
     transition: all .2s ease-in;
 
+    &:has(input:focus-visible) {
+        outline: 3px solid $color-primary;
+    }
+
     input[type='radio'] {
       appearance: none;
-      display: none;
+      position: absolute;
     }
 
     &:hover .item__icon-box {

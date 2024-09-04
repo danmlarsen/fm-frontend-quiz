@@ -47,3 +47,8 @@ body.dark-mode {
     background-image: url('../assets/images/pattern-background-mobile-dark.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
   }
 }
+
+:focus-visible {
+    outline-color: $color-primary;
+    outline-offset: 3px;
+}

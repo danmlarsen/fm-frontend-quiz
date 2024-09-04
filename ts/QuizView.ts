@@ -110,7 +110,7 @@ export class QuizView {
 
       renderQuestionText(questionText: string, questionIndex: number, totalQuestions: number, onProgressBarTimeout: () => void): void {   
         this.questionsContainerElement.innerHTML = `
-                <div class="quiz__question">
+                <div class="quiz__question fade-in">
                     <p class="quiz__question-number">Question ${
                       questionIndex + 1
                     } of ${totalQuestions}</p>
@@ -124,7 +124,7 @@ export class QuizView {
         if (progressBarElement) {
           this.progressBar = new ProgressBar(
             progressBarElement,
-            5000,
+            20000,
             onProgressBarTimeout
           );
           this.progressBar.start();
@@ -136,10 +136,10 @@ export class QuizView {
     
         this.answersContainerElement.innerHTML = `
                 <form class="quiz__answers-form" action="#" method="post" novalidate>
-                    <div class="quiz__answers">
+                    <fieldset role="radiogroup" class="quiz__answers fade-in">
                         ${answersMarkup}
                         <button class="btn quiz__answer-btn">Submit Answer</button>
-                    </div>
+                    </fieldset>
                 </form>
             `;
     
@@ -155,7 +155,7 @@ export class QuizView {
             <label for="answer-${index + 1}" class="quiz__answer">
                 <input class="quiz__answer-radio" type="radio" name="answer" id="answer-${
                   index + 1
-                }" value="${answer}" required />
+                }" value="${answer}" />
                 <div class="item">
                     <div class="item__icon-box">${numToLabel(index)}</div>
                     <h3 class="item__title">${escapeHtml(answer)}</h3>
@@ -167,14 +167,14 @@ export class QuizView {
       renderQuizCompleted(title: string, currentScore: number, numQuestions: number, onPlayAgain: () => void): void {
     
         this.questionsContainerElement.innerHTML = `
-            <div class="quiz__completed-title">
+            <div class="quiz__completed-title fade-in">
                 <h1 class="heading-primary">Quiz completed<br /><strong>You scored...</strong></h1>
             </div>
         `;
     
         this.answersContainerElement.innerHTML = `
-            <div>
-                <div class="quiz__completed-stats u-mb-lg">
+            <div class="fade-in-delayed">
+                <div class="quiz__completed-stats u-mb-lg ">
                     <div class="item">
                         <div class="item__icon-box item__icon-box--${title.toLowerCase()}">
                             <img src="${getIcon(
@@ -200,6 +200,7 @@ export class QuizView {
         this.answersContainerElement.querySelector<HTMLInputElement>('.quiz__answer-btn')?.remove();
         const nextQuestionBtn = document.createElement('button');
         nextQuestionBtn.classList.add('btn');
+        nextQuestionBtn.classList.add('fade-in');
         nextQuestionBtn.textContent = 'Next Question';
         nextQuestionBtn.addEventListener('click', onClickNextQuestion);
   
