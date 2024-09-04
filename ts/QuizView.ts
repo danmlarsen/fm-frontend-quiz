@@ -43,13 +43,11 @@ export class QuizView {
 
     renderSubjectButton({ title }: QuizData, index: number): string {
         return `
-                <button class="quiz__subject-btn" data-subject="${index}">
-                    <span class="item">
+                <button class="quiz__subject-btn item" data-subject="${index}">
                         <span class="item__icon-box item__icon-box--${title.toLowerCase()}">
                             <img src="${getIcon(title)}" alt="${title} icon" class="item__icon" />
                         </span>
                         <h2 class="item__title">${title}</h2>
-                    </span>
                 </button>
             `;
     }
