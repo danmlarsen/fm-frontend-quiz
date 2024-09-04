@@ -189,10 +189,10 @@ export class QuizView {
     }
 
     renderInvalidIcon(parent: Element): void {
-        parent.insertAdjacentHTML('beforeend', `<img class="quiz__answer-icon" src="${iconIncorrect}" alt="Incorrect answer icon" />`);
+        parent.insertAdjacentHTML('beforeend', `<img class="quiz__answer-icon fade-in-right" src="${iconIncorrect}" alt="Incorrect answer icon" />`);
     }
 
     renderValidIcon(parent: Element): void {
-        parent?.insertAdjacentHTML('beforeend', `<img class="quiz__answer-icon" src="${iconCorrect}" alt="Correct answer icon" />`);
+        parent?.insertAdjacentHTML('beforeend', `<img class="quiz__answer-icon fade-in-right" src="${iconCorrect}" alt="Correct answer icon" />`);
     }
 }

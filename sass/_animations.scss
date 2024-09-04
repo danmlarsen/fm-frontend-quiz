@@ -9,6 +9,17 @@
     }
 }
 
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes fadeOut {
     from {
         opacity: 1;
@@ -21,14 +32,18 @@
 }
 
 .fade-in {
-    animation: fadeIn .5s ease 0s forwards;
+    animation: fadeIn 0.5s ease 0s forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.5s ease 0s forwards;
 }
 
 .fade-in-delayed {
     opacity: 0;
-    animation: fadeIn .5s ease .5s forwards;
+    animation: fadeIn 0.5s ease 0.5s forwards;
 }
 
 .fade-out {
-    animation: fadeIn .5s ease 0s forwards;
+    animation: fadeIn 0.5s ease 0s forwards;
 }
