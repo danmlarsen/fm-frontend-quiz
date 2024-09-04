@@ -2,151 +2,161 @@
 @use 'mixins' as *;
 
 .quiz {
-  max-width: 116rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 46.5rem 1fr;
-  row-gap: 6.4rem;
-  column-gap: 13.1rem;
-
-  @include respond-to('medium') {
-    grid-template-columns: 1fr;
-    max-width: 64rem;
-  }
-
-  &__header {
-    min-height: 5.6rem;
-    grid-column: span 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 116rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 46.5rem 1fr;
+    row-gap: 8.5rem;
+    column-gap: 13.1rem;
 
     @include respond-to('medium') {
-      grid-column: initial;
-    } 
-  }
-
-  &__theme {
-    margin-left: auto;
-  }
-
-  &__question {
-    min-height: 90%;
-    display: grid;
-    gap: 2.4rem;
-
-    grid-template-rows: min-content 1fr min-content;
-  }
-
-  &__question-text {
-    line-height: 1.2;
-  }
-
-  &__subjects {
-    display: grid;
-    gap: 2.4rem;
-  }
-
-  &__subject-btn {
-    width: 100%;
-    background-color: var(--background-color-2);
-    box-shadow: $shadow-1;
-    padding: 1.5rem;
-    border: none;
-    border-radius: 2.4rem;
-    cursor: pointer;
-    transition: all .2s ease-in;
-
-    &:hover {
-        transform: translateY(-3px) scale(1.01);
+        grid-template-columns: 1fr;
+        max-width: 64rem;
+        row-gap: 6.4rem;
     }
 
-  }
+    &__header {
+        min-height: 5.6rem;
+        grid-column: span 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-  &__answers {
-    display: grid;
-    gap: 2.4rem;
-    border: none;
-  }
-
-  &__answer {
-    background-color: var(--background-color-2);
-    padding: 1.5rem 2rem;
-    border-radius: 2.4rem;
-    border: 3px solid transparent;
-    box-shadow: $shadow-1;
-    cursor: pointer;
-    user-select: none;
-    transition: all .2s ease-in;
-
-    &:has(input:focus-visible) {
-        outline: 3px solid $color-primary;
+        @include respond-to('medium') {
+            grid-column: initial;
+        }
     }
 
-    input[type='radio'] {
-      appearance: none;
-      position: absolute;
+    &__theme {
+        margin-left: auto;
     }
 
-    &:hover .item__icon-box {
-        background-color: $color-a11y;     
-        color: $color-primary;   
+    &__question {
+        display: grid;
+        gap: 2.4rem;
+
+        grid-template-rows: min-content minmax(35rem, min-content) 1fr;
+
+        @include respond-to('medium') {
+            grid-template-rows: auto;
+
+            .progress-bar {
+                margin-top: 1.3rem;
+            }
+        }
     }
 
-    &--correct {
-      border-color: $color-correct;
+    &__question-text {
+        line-height: 1.2;
+    }
 
-      .item > .item__icon-box {
-        background-color: $color-correct;
+    &__subjects {
+        display: grid;
+        gap: 2.4rem;
+    }
+
+    &__subject-btn {
+        width: 100%;
+        background-color: var(--background-color-2);
+        box-shadow: $shadow-1;
+        padding: 2rem;
+        border: none;
+        border-radius: 2.4rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            transform: translateY(-3px) scale(1.01);
+        }
+    }
+
+    &__answers {
+        display: grid;
+        gap: 2.4rem;
+        border: none;
+    }
+
+    &__answer {
+        background-color: var(--background-color-2);
+        padding: 1.5rem 2rem;
+        border-radius: 2.4rem;
+        border: 3px solid transparent;
+        box-shadow: $shadow-1;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.2s ease-in;
+
+        &:has(input:focus-visible) {
+            outline: 3px solid $color-primary;
+        }
+
+        input[type='radio'] {
+            appearance: none;
+            position: absolute;
+        }
+
+        &:hover .item__icon-box {
+            background-color: $color-a11y;
+            color: $color-primary;
+        }
+
+        &--correct {
+            border-color: $color-correct;
+
+            .item > .item__icon-box {
+                background-color: $color-correct;
+                color: $color-neutral-100;
+            }
+        }
+
+        &--incorrect {
+            border-color: $color-invalid;
+
+            .item > .item__icon-box {
+                background-color: $color-invalid;
+                color: $color-neutral-100;
+            }
+        }
+
+        &:has(> input:checked) {
+            border-color: $color-primary;
+        }
+    }
+
+    &__answer-icon {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    &__answer-radio:checked + .item .item__icon-box {
+        background-color: $color-primary;
         color: $color-neutral-100;
-      }
     }
 
-    &--incorrect {
-      border-color: $color-invalid;
+    &__completed-stats {
+        padding: 4.8rem;
+        background-color: var(--background-color-2);
+        color: var(--heading-color-1);
+        box-shadow: $shadow-1;
+        border-radius: 12px;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        gap: 4rem;
 
-      .item > .item__icon-box {
-        background-color: $color-invalid;
-        color: $color-neutral-100;
-      }
+        p {
+            color: var(--text-color-1);
+        }
     }
 
-    &:has(> input:checked) {
-      border-color: $color-primary;
+    &__score {
+        font-size: $fs-heading-xl;
     }
-  }
 
-  &__answer-icon {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  &__answer-radio:checked + .item .item__icon-box {
-    background-color: $color-primary;
-    color: $color-neutral-100;
-  }
-
-  &__completed-stats {
-    padding: 4.8rem;
-    background-color: var(--background-color-2);
-    color: var(--heading-color-1);
-    box-shadow: $shadow-1;
-    border-radius: 12px;
-
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    gap: 4rem;
-  }
-
-  &__score {
-    font-size: $fs-heading-xl;
-  }
-
-  &__invalid-answer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .8rem;
-  }
+    &__invalid-answer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+    }
 }

@@ -5,7 +5,6 @@ body {
   color: var(--text-color-1);
   padding: 8.3rem 2.4rem;
   transition: background-color 0.2s ease-out, color 0.2s ease-in;
-
   background-image: url('../assets/images/pattern-background-desktop-light.svg'), linear-gradient(var(--background-color-1), var(--background-color-1));
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,4 +50,9 @@ body.dark-mode {
 :focus-visible {
     outline-color: $color-primary;
     outline-offset: 3px;
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-neutral-100;
 }
