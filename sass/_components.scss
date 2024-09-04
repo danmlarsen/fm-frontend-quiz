@@ -110,6 +110,8 @@
 
     &__title {
         font-size: $fs-heading-sm;
+        font-weight: $fw-medium;
+        color: var(--heading-color-1);
     }
 
     &__icon-box {
