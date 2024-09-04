@@ -1,138 +1,142 @@
 @use 'variables' as *;
 
 .toggle {
-  position: relative;
-  display: inline-block;
-  width: 4.8rem;
-  height: 2.8rem;
+    position: relative;
+    display: inline-block;
+    width: 4.8rem;
+    height: 2.8rem;
 
-  &:has(input:focus-visible) {
-    outline: 3px solid $color-primary;
-    outline-offset: 3px;
-    border-radius: 2rem;
-  }
-
-  input[type='checkbox'] {
-    appearance: none;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $color-primary;
-    transition: 0.4s;
-    border-radius: 2rem;
-
-    &::before {
-      position: absolute;
-      content: '';
-      height: 2rem;
-      width: 2rem;
-      left: 0.4rem;
-      bottom: 0.4rem;
-      background-color: $color-neutral-100;
-      transition: 0.4s;
-      border-radius: 50%;
+    &:has(input:focus-visible) {
+        outline: 3px solid $color-primary;
+        outline-offset: 3px;
+        border-radius: 2rem;
     }
-  }
 
-  input[type='checkbox']:checked + .slider {
-    &::before {
-      transform: translateX(100%);
+    input[type='checkbox'] {
+        appearance: none;
     }
-  }
 
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-  }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-primary;
+        transition: 0.4s;
+        border-radius: 2rem;
 
-  &__icon {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
+        &::before {
+            position: absolute;
+            content: '';
+            height: 2rem;
+            width: 2rem;
+            left: 0.4rem;
+            bottom: 0.4rem;
+            background-color: $color-neutral-100;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+    }
+
+    input[type='checkbox']:checked + .slider {
+        &::before {
+            transform: translateX(100%);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+    }
+
+    &__icon {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
 }
 
 .progress-bar {
-  display: flex;
-  align-items: center;
-  height: 1.6rem;
-  background-color: var(--background-color-2);
-  border-radius: 999px;
-  padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    height: 1.6rem;
+    background-color: var(--background-color-2);
+    border-radius: 999px;
+    padding: 0.4rem;
 
-  & > div {
-    height: 100%;
-    background-color: $color-primary;
-    border-radius: 104px;
-  }
+    & > div {
+        height: 100%;
+        background-color: $color-primary;
+        border-radius: 104px;
+    }
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border: none;
-  border-radius: 2.4rem;
-  background-color: $color-primary;
-  color: $color-neutral-100;
-  font-size: $fs-heading-sm;
-  font-weight: $fw-medium;
-  line-height: 1;
-  padding: 3.2rem;
-  cursor: pointer;
-  box-shadow: $shadow-1;
-  transition: 0.2s background-color ease-in-out;
-
-  &:hover,
-  &:focus {
-    background-color: lighten($color-primary, 25%);
-  }
-}
-
-.item {
-  display: grid;
-  grid-template-columns: max-content 1fr 4rem;
-  align-items: center;
-  justify-items: start;
-  gap: 3.2rem;
-
-  &__icon {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  &__icon-box {
-    width: 5.6rem;
-    height: 5.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 1;
-    border-radius: 0.8rem;
+    width: 100%;
+    border: none;
+    border-radius: 2.4rem;
+    background-color: $color-primary;
+    color: $color-neutral-100;
     font-size: $fs-heading-sm;
     font-weight: $fw-medium;
-    background-color: $color-neutral-200;
-    color: $color-neutral-800;
-    transition: all .2s ease-in;
+    line-height: 1;
+    padding: 3.2rem;
+    cursor: pointer;
+    box-shadow: $shadow-1;
+    transition: 0.2s background-color ease-in-out;
 
-    &--html {
-      background-color: $color-html;
+    &:hover,
+    &:focus {
+        background-color: lighten($color-primary, 25%);
     }
-    &--css {
-      background-color: $color-css;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: max-content 1fr 4rem;
+    align-items: center;
+    justify-items: start;
+    gap: 3.2rem;
+
+    &__icon {
+        width: 4rem;
+        height: 4rem;
     }
-    &--javascript {
-      background-color: $color-js;
+
+    &__title {
+        font-size: $fs-heading-sm;
     }
-    &--accessibility {
-      background-color: $color-a11y;
+
+    &__icon-box {
+        width: 5.6rem;
+        height: 5.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+        border-radius: 0.8rem;
+        font-size: $fs-heading-sm;
+        font-weight: $fw-medium;
+        background-color: $color-neutral-200;
+        color: $color-neutral-800;
+        transition: all 0.2s ease-in;
+
+        &--html {
+            background-color: $color-html;
+        }
+        &--css {
+            background-color: $color-css;
+        }
+        &--javascript {
+            background-color: $color-js;
+        }
+        &--accessibility {
+            background-color: $color-a11y;
+        }
     }
-  }
 }

@@ -37,19 +37,19 @@ export class QuizView {
             <div class="item__icon-box item__icon-box--${title.toLowerCase()}">
                 <img src="${getIcon(title)}" alt="${title} icon" class="item__icon" />
             </div>
-            <h3 class="item__title">${title}</h3>
+            <h2 class="item__title">${title}</h2>
         `;
     }
 
     renderSubjectButton({ title }: QuizData, index: number): string {
         return `
                 <button class="quiz__subject-btn" data-subject="${index}">
-                    <div class="item">
-                        <div class="item__icon-box item__icon-box--${title.toLowerCase()}">
+                    <span class="item">
+                        <span class="item__icon-box item__icon-box--${title.toLowerCase()}">
                             <img src="${getIcon(title)}" alt="${title} icon" class="item__icon" />
-                        </div>
-                        <h3 class="item__title">${title}</h3>
-                    </div>
+                        </span>
+                        <h2 class="item__title">${title}</h2>
+                    </span>
                 </button>
             `;
     }
@@ -104,7 +104,7 @@ export class QuizView {
                 <input class="quiz__answer-radio" type="radio" name="answer" id="answer-${index + 1}" value="${answer}" aria-labelledby="answer-${index + 1}-title" />
                 <div class="item">
                     <div class="item__icon-box">${numToLabel(index)}</div>
-                    <h3 class="item__title" id="answer-${index + 1}-title">${escapeHtml(answer)}</h3>
+                    <h2 class="item__title" id="answer-${index + 1}-title">${escapeHtml(answer)}</h2>
                 </div>
             </label>
         `;
@@ -124,7 +124,7 @@ export class QuizView {
                         <div class="item__icon-box item__icon-box--${title.toLowerCase()}">
                             <img src="${getIcon(title)}" alt="${title} icon" class="item__icon" />
                         </div>
-                        <h3 class="item__title">${title}</h3>
+                        <h2 class="item__title">${title}</h2>
                     </div>
 
                     <h2 class="quiz__score">${currentScore}</h2>
