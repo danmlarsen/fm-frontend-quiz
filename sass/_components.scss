@@ -6,6 +6,10 @@
     width: 4.8rem;
     height: 2.8rem;
 
+    &__wrapper {
+        margin-right: 0.3rem;
+    }
+
     &:has(input:focus-visible) {
         outline: 3px solid $color-primary;
         outline-offset: 3px;
